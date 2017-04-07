@@ -1,9 +1,5 @@
 # rapidtriage
 
-This project was exported from code.google.com/p/rapidtriage due to Google closing down Google Code.
-
-RapidTriage was developed by Trenton Bond - trent.bond@gmail.com. All credits go to Trent.
-
 # Introduction 
 RapidTriage quickly collects critical information from key areas of the operating system to assist information security incident handlers in determining whether or not there has been compromise. Often this process of collecting information is manual and time consuming particularly when multiple systems are suspect. RapidTriage may be deployed to many systems and the results analyzed relative to each other to help the incident handler prioritize where to focus their containments efforts. Frequently, the incident handler does not have immediate access or authorization to the systems in question and getting it setup can be time consuming. RapidTriage can be quickly provided to authorized system administrators to collect the critical information many times used to help identify a compromise. Beside speed to deploy and overcoming access barriers, the other major benefits of using RapidTriage include:
 
