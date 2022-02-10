@@ -42,11 +42,11 @@ parser.add_option_group(group2)
 (options,args)=parser.parse_args()
 if (options.outfile is None):
 	parser.print_help()
-        sys.exit()
+	sys.exit()
 # Ensure at least of the required arguments has been chosen at runtime
 if not any((options.allchecks, options.network, options.logs, options.process, options.tasks, options.user, options.filesystem)):
 	parser.print_help()
-        sys.exit()
+	sys.exit()
 
 # Open the user specified outfile 
 outputfile=open(options.outfile,"a")
@@ -315,7 +315,7 @@ if options.allchecks or options.filesystem:
     		'Files Modified in the Last 24 Hours::find / -type f -mtime 0 -ls',
     		'Orphaned Files Without a User or Group::find / -nouser -nogroup'
     		]
-	elif os_type is "windows":
+elif os_type is "windows":
     		cmds = [
     		'Large Files >50M::for /R c:\ %i in (*) do @if %~zi gtr 50000000 echo %i %~zi',
     		'hklm\software\microsoft\windows\currentversion\\run::reg query hklm\software\microsoft\windows\currentversion\\run',
@@ -325,7 +325,7 @@ if options.allchecks or options.filesystem:
     		'hkcu\software\microsoft\windows\currentversion\\runonce::reg query hkcu\software\microsoft\windows\currentversion\\runonce',
     		'hkcu\software\microsoft\windows\currentversion\\runonceex::reg query hkcu\software\microsoft\windows\currentversion\\runonceex'
     		]
-	elif os_type is "osx":
+elif os_type is "osx":
     		cmds = [
     		'Files with SUID/GUID bits set::find / -type f \( -perm +4000 -o -perm +2000 \) -exec ls -l {} \; 2>/dev/null',
     		'Large Files >50M::find / -size +50000k -print',
